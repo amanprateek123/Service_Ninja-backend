@@ -2,10 +2,12 @@ const express = require("express");
 const path = require("path");
 require("./utils/database");
 const app = express();
+const route = require('./routes/route');
 
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(route);
 
 app.use(express.static(path.join(__dirname, "public")));
 
